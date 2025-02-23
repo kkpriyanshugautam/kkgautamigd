@@ -1,0 +1,116 @@
+<!kkworldigdownloder html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7a4dff; /* Purple Background */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            padding: 40px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        input[type="url"] {
+            padding: 12px;
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button {
+            background-color: #6200ea; /* Purple button */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        button:hover {
+            background-color: #5a00d1; /* Darker shade on hover */
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            input[type="url"] {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Instagram Downloader</h1>
+        <p>Enter the URL of the Instagram video, story, or reel you want to download:</p>
+        <input type="url" id="urlInput" placeholder="Paste Instagram URL..." required>
+        <button onclick="downloadContent()">Download</button>
+
+        <div id="message"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Instagram Downloader. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        function downloadContent() {
+            var url = document.getElementById('urlInput').value;
+            if (url === '') {
+                alert('Please enter a valid URL.');
+            } else {
+                document.getElementById('message').innerHTML = 'Processing your request...';
+                // In real use, you would trigger the download logic here via API or backend service
+                setTimeout(function() {
+                    document.getElementById('message').innerHTML = 'Content downloaded successfully!';
+                }, 2000);
+            }
+        }
+    </script>
+
+</body>
+</html>
